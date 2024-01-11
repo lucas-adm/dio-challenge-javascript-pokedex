@@ -19,20 +19,25 @@ let currentGeneration = 0
 const offSetGenerations = [0, 151, 251, 386, 493]
 let currentOffSet = 0
 
-let offSet = currentOffSet[0]
+let offSet = offSetGenerations[0]
 let limit = generations[0]
+
+
+function load() {
+    loading.style.display = 'flex'
+    pokedex.style.display = 'none'
+}
+
+function loadComplete() {
+    loading.style.display = 'none'
+    pokedex.style.display = 'block'
+}
 
 function loadPokemonItens(offSet, limit) {
 
+    load();
+
     function convertPokemonToListItem(pokemon) {
-
-        loading.style.display = 'flex'
-        pokedex.style.display = 'none'
-
-        setTimeout(() => {
-            loading.style.display = 'none'
-            pokedex.style.display = 'block'
-        }, 250);
 
         return `
         <li class="pokemon ${pokemon.type}">
@@ -52,8 +57,7 @@ function loadPokemonItens(offSet, limit) {
 
     pokeApi.getPokemons(offSet, limit).then((pokemons = []) => {
 
-        loading.style.display = 'flex'
-        pokedex.style.display = 'none'
+        loadComplete();
 
         pokemonsOrderedList.innerHTML = pokemons.map(convertPokemonToListItem).join('')
     })
@@ -63,6 +67,8 @@ function loadPokemonItens(offSet, limit) {
 loadPokemonItens(offSet, generations[currentGeneration])
 
 nextGenerationBtn.addEventListener('click', () => {
+
+    load();
 
     currentOffSet++
     offSet = offSetGenerations[currentOffSet]
@@ -86,6 +92,8 @@ nextGenerationBtn.addEventListener('click', () => {
 })
 
 backGenerationBtn.addEventListener('click', () => {
+
+    load();
 
     currentOffSet--
     offSet = offSetGenerations[currentOffSet]

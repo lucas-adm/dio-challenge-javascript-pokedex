@@ -11,12 +11,16 @@
 
 #
 
-#### ➡ Acessa a página <a href="">*aqui*</a>
+#### ➡ Acessa a página <a href="https://lucas-adm.github.io/dio-challenge-javascript-pokedex/">*aqui*</a>
 
 <details>
-  <summary><a href="https://pokeapi.co">PokéAPI</a></summary>
+  
+<summary><a href="https://pokeapi.co">PokéAPI</a></summary>
 
 > pokeapi.co
+
 </details>
 
-<img align="center" src="">
+<div align="center">
+  <img src="https://i.imgur.com/gNOiQag.png">
+</div>

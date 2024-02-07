@@ -11,7 +11,7 @@
 
 #
 
-#### ➡ Acessa a página <a href="https://lucas-adm.github.io/dio-challenge-javascript-pokedex/">*aqui*</a>
+#### ▶ Acesse a pokédex <a href="https://lucas-adm.github.io/dio-challenge-javascript-pokedex/">*aqui*</a>
 
 <details>
   
